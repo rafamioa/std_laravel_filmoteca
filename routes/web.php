@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('admin.base.base');
 });
+
+Route::get('/produtoras/create', 'ProdutoraController@create')->name('produtoras.create');
+Route::post('/produtoras/store', 'ProdutoraController@store')->name('produtoras.store');

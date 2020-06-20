@@ -18,7 +18,6 @@
     </div>
     <div class="col-10 cor">
         @yield('conteudo')
-        <h1>teste</h1>
     </div>
 </div>
     
