@@ -12,9 +12,16 @@
 
 @include('admin.base.navbar')
 
-    @yield('conteudo')
-
-
+<div class="row">
+    <div class="col-2">
+        @include('admin.base.sidebar')
+    </div>
+    <div class="col-10 cor">
+        @yield('conteudo')
+        <h1>teste</h1>
+    </div>
+</div>
+    
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

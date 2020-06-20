@@ -1,3 +1,11 @@
 .border-bottom-2{
     border-bottom: 2px solid #ff2d20;
 }
+
+.menu-item{
+    color: #f95a52;
+}
+
+.menu-link, .menu-link:hover{
+    color:#dbdbdb;
+}
