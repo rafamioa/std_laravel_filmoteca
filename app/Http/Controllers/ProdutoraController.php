@@ -14,7 +14,8 @@ class ProdutoraController extends Controller
      */
     public function index()
     {
-        //
+        $produtoras = Produtora::all();
+        return view('admin.produtoras.list', ['produtoras' => $produtoras]);
     }
 
     /**
