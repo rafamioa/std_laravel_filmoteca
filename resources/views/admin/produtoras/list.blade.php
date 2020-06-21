@@ -30,7 +30,10 @@
             </td>
         </tr>
         @endforeach
-    </tbody>
+    </tbody> 
 </table>
+<div class="d-flex justify-content-center">
+    {!! $produtoras->links() !!}
+</div>
 
 @endsection

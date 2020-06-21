@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produtora;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ProdutoraRequest;
 
 class ProdutoraController extends Controller
@@ -15,7 +16,7 @@ class ProdutoraController extends Controller
      */
     public function index()
     {
-        $produtoras = Produtora::all();
+        $produtoras = Produtora::paginate(5);
         return view('admin.produtoras.list', ['produtoras' => $produtoras]);
     }
 

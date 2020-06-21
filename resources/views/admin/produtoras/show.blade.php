@@ -16,7 +16,7 @@
 
 <b>Nome: </b><p> {{ $produtora->nome }}</p><hr>
 <b>História: </b><p> {{ $produtora->historia }}</p><hr>
-<b>Data de Fundação: </b><p> {{ $produtora->data_fundacao }}</p><hr>
+<b>Data de Fundação: </b><p> {{ date('d/m/Y'), strtotime($produtora->data_fundacao) }}</p><hr>
 
 
 

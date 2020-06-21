@@ -24,8 +24,8 @@ class ProdutoraRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required',
-            'historia' => 'required',
+            'nome' => 'required|min:3|max:50',
+            'historia' => 'required|min:25|max:500',
             'data_fundacao' => 'required'
         ];
     }
@@ -34,6 +34,10 @@ class ProdutoraRequest extends FormRequest
 {
     return [
         'nome.required' => 'O campo nome é obrigatório',
+        'nome.min' => 'O campo deve conter no mínimo 3 caracteres',
+        'nome.max' => 'O campo deve conter no máximo 50 caracteres',
+        'historia.min' => 'O campo deve conter no mínimo 25 caracteres',
+        'historia.max' => 'O campo deve conter no máximo 500 caracteres',
         'historia.required' => 'O campo história é obrigatório',
         'data_fundacao.required' => 'O campo Data de Fundação é obrigatório',
     ];
