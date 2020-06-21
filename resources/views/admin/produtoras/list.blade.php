@@ -24,7 +24,7 @@
             <td>{{$p->historiaPR}}</td>
             <td>{{date('d/m/Y', strtotime($p->data_fundacao))}}</td>
             <td>
-                <a href="" class="btn btn-info">Exibir</a>
+            <a href="{{ route('produtoras.show', ['id' => $p->id]) }}" class="btn btn-info">Exibir</a>
                 <a href="" class="btn btn-warning">Editar</a>
                 <a href="" class="btn btn-danger">Excluir</a>
             </td>

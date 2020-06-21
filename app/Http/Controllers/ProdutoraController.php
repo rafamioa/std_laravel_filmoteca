@@ -43,14 +43,15 @@ class ProdutoraController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Undocumented function
      *
-     * @param  \App\Produtora  $produtora
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return void
      */
-    public function show(Produtora $produtora)
+    public function show(Request $request)
     {
-        //
+        $produtora = Produtora::find($request->id);
+        return view('admin.produtoras.show')->with(['produtora' => $produtora]);
     }
 
     /**
