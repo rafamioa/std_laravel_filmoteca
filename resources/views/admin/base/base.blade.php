@@ -17,6 +17,8 @@
         @include('admin.base.sidebar')
     </div>
     <div class="col-10 cor">
+        <h1 class="my-3">@yield('cabecalho')</h1>
+        <div class="dropdown-divider mb-3"></div>
         @yield('conteudo')
     </div>
 </div>

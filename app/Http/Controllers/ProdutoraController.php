@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produtora;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProdutoraRequest;
 
 class ProdutoraController extends Controller
 {
@@ -34,11 +35,11 @@ class ProdutoraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProdutoraRequest $request)
     {
-        $dados = $request->all();
-        Produtora::create($dados);
-        return redirect()->action('ProdutoraController@create');
+        Produtora::create($request->validated());
+        $mensagem = 'Salvo com sucesso';
+        return view('admin.produtoras.create')->with(['mensagem' => $mensagem]);
     }
 
     /**

@@ -1,15 +1,19 @@
 @extends('admin.base.base')
 
+@section('titulo', 'Lista produtoras')
+
 @section('conteudo')
 
-<h1 class="my-3">Lista de produtoras</h1>
+@section('cabecalho', 'Lista produtoras')
 
 <table class="table table-bordered table-hover">
     <thead class="bg-dark texto-laranja">
         <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Ações</th>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>História</td>
+            <td>Data de Fundação</td>
+            <td>Ações</td>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +21,8 @@
         <tr>
             <td>{{$p->id}}</td>
             <td>{{$p->nome}}</td>
+            <td>{{$p->historiaPR}}</td>
+            <td>{{date('d/m/Y', strtotime($p->data_fundacao))}}</td>
             <td>
                 <a href="" class="btn btn-info">Exibir</a>
                 <a href="" class="btn btn-warning">Editar</a>
