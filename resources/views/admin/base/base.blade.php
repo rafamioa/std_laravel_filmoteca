@@ -17,14 +17,17 @@
         @include('admin.base.sidebar')
     </div>
     <div class="col-10 cor">
-        <h1 class="my-3">@yield('cabecalho')</h1>
-        <div class="dropdown-divider mb-3"></div>
-        @yield('conteudo')
+        <div class="container">
+            <h1 class="my-3">@yield('cabecalho')</h1>
+            <hr>
+            @yield('conteudo')
+        </div>  
     </div>
 </div>
     
 @include('admin.base.rodape')
 
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>

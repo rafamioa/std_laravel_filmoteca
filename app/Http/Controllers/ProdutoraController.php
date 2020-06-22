@@ -61,9 +61,10 @@ class ProdutoraController extends Controller
      * @param  \App\Produtora  $produtora
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produtora $produtora)
+    public function edit(Request $request)
     {
-        //
+        $produtora = Produtora::find($request->id);
+        return view('admin.produtoras.edit', ['produtora' => $produtora]);
     }
 
     /**
@@ -73,9 +74,19 @@ class ProdutoraController extends Controller
      * @param  \App\Produtora  $produtora
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produtora $produtora)
+    public function update(ProdutoraRequest $produtora)
     {
-        //
+       $p_resultado = Produtora::find($produtora->id);
+
+       if($p_resultado == null){
+            return redirect()->action('ProdutoraController@create');
+       }
+      
+       $p_resultado->nome = $produtora->nome;
+       $p_resultado->historia = $produtora->historia;
+       $p_resultado->data_fundacao = $produtora->data_fundacao;
+       $p_resultado->save();
+       return redirect()->action('ProdutoraController@index');
     }
 
     /**
