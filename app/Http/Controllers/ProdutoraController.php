@@ -95,8 +95,15 @@ class ProdutoraController extends Controller
      * @param  \App\Produtora  $produtora
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produtora $produtora)
+    public function destroy(Request $produtora)
     {
-        //
+       $produtora = Produtora::find($produtora->id);
+       
+       if($produtora != null){
+        $produtora->destroy($produtora->id);
+        return redirect()->action('ProdutoraController@index');
+       }
+       return "Erro ao excluir";  
+
     }
 }

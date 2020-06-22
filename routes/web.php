@@ -21,3 +21,4 @@ Route::post('/produtoras/store', 'ProdutoraController@store')->name('produtoras.
 Route::get('/produtoras/show/{id}', 'ProdutoraController@show')->name('produtoras.show');
 Route::get('/produtoras/edit/{id}', 'ProdutoraController@edit')->name('produtoras.edit');
 Route::put('/produtoras/update', 'ProdutoraController@update')->name('produtoras.update');
+Route::delete('/produtoras/delete/{id}', 'ProdutoraController@destroy')->name('produtoras.delete');
