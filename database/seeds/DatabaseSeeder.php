@@ -1,5 +1,6 @@
 <?php
 
+use PaisTableSeeder;
 use ClassificacaoTableSeeder;
 use Illuminate\Database\Seeder;
 
@@ -14,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(ClassificacaoTableSeeder::class);
+        $this->call(PaisTableSeeder::class);
     }
 }
