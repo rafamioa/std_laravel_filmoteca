@@ -23,12 +23,12 @@
         </a>
         <ul class="list-group list-group-flush text-white" id="artistas-gestao">
             <li class="list-group-item  bg-dark">
-                <a href="" class="nav-link menu-link p-0">
+            <a href="{{ route('atores.create') }}" class="nav-link menu-link p-0">
                     Cadastro
                 </a>
             </li>
             <li class="list-group-item  bg-dark">
-                <a href="" class="nav-link menu-link p-0">
+            <a href="{{ route('atores.index') }}" class="nav-link menu-link p-0">
                     Lista
                 </a>
             </li>

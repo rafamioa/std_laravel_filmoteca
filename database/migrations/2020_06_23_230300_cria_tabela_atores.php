@@ -16,6 +16,7 @@ class CriaTabelaAtores extends Migration
         Schema::create('atores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->text('biografia', 500);
             $table->integer('idade');
             $table->date('data_nascimento');
             $table->unsignedInteger('pais_id');

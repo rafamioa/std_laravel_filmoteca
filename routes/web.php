@@ -22,3 +22,7 @@ Route::get('/produtoras/show/{id}', 'ProdutoraController@show')->name('produtora
 Route::get('/produtoras/edit/{id}', 'ProdutoraController@edit')->name('produtoras.edit');
 Route::put('/produtoras/update', 'ProdutoraController@update')->name('produtoras.update');
 Route::delete('/produtoras/delete/{id}', 'ProdutoraController@destroy')->name('produtoras.delete');
+
+Route::get('/artistas','AtorController@index')->name('atores.index');
+Route::get('/artistas/create','AtorController@create')->name('atores.create');
+Route::post('/artistas/store','AtorController@store')->name('atores.store');
