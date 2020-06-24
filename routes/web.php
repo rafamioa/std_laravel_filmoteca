@@ -26,3 +26,4 @@ Route::delete('/produtoras/delete/{id}', 'ProdutoraController@destroy')->name('p
 Route::get('/artistas','AtorController@index')->name('atores.index');
 Route::get('/artistas/create','AtorController@create')->name('atores.create');
 Route::post('/artistas/store','AtorController@store')->name('atores.store');
+Route::get('/artistas/show/{id}', 'AtorController@show')->name('atores.show');

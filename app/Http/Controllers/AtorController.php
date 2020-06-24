@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ator;
 use App\Pais;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AtorController extends Controller
 {
@@ -22,5 +23,10 @@ class AtorController extends Controller
         $dados = $request->all();
         Ator::create($dados);
         return redirect()->action('AtorController@index');
+    }
+
+    public function show(Request $request){
+        $ator = Ator::with('pais')->find($request->id);
+        return view('admin.atores.show', ['ator' => $ator]);
     }
 }

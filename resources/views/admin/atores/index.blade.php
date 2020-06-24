@@ -24,7 +24,7 @@
             <td>{{date('d/m/Y', strtotime($a->data_nascimento))}}</td>
             <td>{{$a->pais->nome}}</td>
             <td class="text-center">
-                <a href="" class="btn btn-info">Exibir</a>
+            <a href="{{ route('atores.show',['id'=>$a->id]) }}" class="btn btn-info">Exibir</a>
                 <a href="" class="btn btn-warning mx-1">Editar</a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                     Excluir
