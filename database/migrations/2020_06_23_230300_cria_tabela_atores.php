@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProdutoraControllersTable extends Migration
+class CriaTabelaAtores extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateProdutoraControllersTable extends Migration
      */
     public function up()
     {
-        Schema::create('produtoras', function (Blueprint $table) {
+        Schema::create('atores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->integer('idade');
+            $table->date('data_nascimento');
+            $table->unsignedInteger('pais_id');
+
+            $table->foreign('pais_id')->references('id')->on('paises');          
         });
     }
 
@@ -26,6 +31,6 @@ class CreateProdutoraControllersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produtoras');
+        Schema::dropIfExists('atores');
     }
 }
