@@ -27,3 +27,6 @@ Route::get('/artistas','AtorController@index')->name('atores.index');
 Route::get('/artistas/create','AtorController@create')->name('atores.create');
 Route::post('/artistas/store','AtorController@store')->name('atores.store');
 Route::get('/artistas/show/{id}', 'AtorController@show')->name('atores.show');
+Route::get('/artistas/edit/{id}', 'AtorController@edit')->name('atores.edit');
+Route::put('/artistas/update', 'AtorController@update')->name('atores.update');
+Route::delete('/artistas/delete/{id}', 'AtorController@delete')->name('atores.delete');
