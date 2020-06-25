@@ -59,12 +59,12 @@
         </a>
         <ul class="list-group list-group-flush text-white" id="diretores-gestao">
             <li class="list-group-item  bg-dark">
-                <a href="" class="nav-link menu-link p-0">
+                <a href="{{route('diretores.create')}}"  class="nav-link menu-link p-0">
                     Cadastro
                 </a>
             </li>
             <li class="list-group-item  bg-dark">
-                <a href="" class="nav-link menu-link p-0">
+            <a href="{{route('diretores.index')}}" class="nav-link menu-link p-0">
                     Lista
                 </a>
             </li>
