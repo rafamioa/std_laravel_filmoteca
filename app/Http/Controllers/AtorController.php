@@ -47,5 +47,10 @@ class AtorController extends Controller
         return redirect()->action('AtorController@index');
     }
 
+    public function delete(Request $request){
+        $ator = Ator::find($request->id);
+        $ator->delete();
+        return redirect()->action('AtorController@index');
+    }
 
 }

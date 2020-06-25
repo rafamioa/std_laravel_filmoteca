@@ -16,5 +16,6 @@ class PaisTableSeeder extends Seeder
         DB::table('paises')->insert(['nome' =>  'Espanha']);
         DB::table('paises')->insert(['nome' =>  'Argentina']);
         DB::table('paises')->insert(['nome' =>  'França']);
+
     }
 }

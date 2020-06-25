@@ -26,5 +26,8 @@ class AtorTableSeeder extends Seeder
             'data_nascimento' => '1962-07-03', 
             'pais_id'=> 2
         ]);
+
+       
+
     }
 }
