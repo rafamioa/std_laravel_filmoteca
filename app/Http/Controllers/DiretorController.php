@@ -23,4 +23,14 @@ class DiretorController extends Controller
         Diretor::create($dados);
         return redirect()->action('DiretorController@index');
     }
+
+    public function edit(Request $request){
+        $diretor = Diretor::find($request->id)->with('pais');
+        return view('admin.diretores.edit',['diretor'=>$diretor]);
+    }
+
+    public function show(Request $request){
+        $diretor = Diretor::with('pais')->find( $request->id);
+        return view('admin.diretores.show',['diretor'=>$diretor]);
+    }
 }
