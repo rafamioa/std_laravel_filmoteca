@@ -46,4 +46,10 @@ class DiretorController extends Controller
         return redirect()->action('DiretorController@index');
     }
 
+    public function delete(Request $request){
+        $diretor = Diretor::find($request->id);
+        $diretor->delete();
+        return redirect()->action('DiretorController@index');
+    }
+
 }
