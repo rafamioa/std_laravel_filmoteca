@@ -5,7 +5,7 @@
         </a>
         <ul class="list-group list-group-flush text-white" id="filmes-gestao">
             <li class="list-group-item  bg-dark">
-                <a href="" class="nav-link menu-link p-0">
+            <a href="{{ route('filmes.create') }}" class="nav-link menu-link p-0">
                     Cadastro
                 </a>
             </li>

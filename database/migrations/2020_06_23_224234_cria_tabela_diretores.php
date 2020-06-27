@@ -19,6 +19,7 @@ class CriaTabelaDiretores extends Migration
             $table->text('biografia');
             $table->integer('idade');
             $table->date('data_nascimento');
+            $table->string('imagem')->nullable();
             $table->unsignedInteger('pais_id');
 
             $table->foreign('pais_id')->references('id')->on('paises');   

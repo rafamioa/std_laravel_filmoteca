@@ -14,6 +14,13 @@
 </div>
 <hr>
 
+<b>Foto: </b><br>
+@if($diretor->imagem === null)
+    <p> Não há foto </p>
+@else
+   <img src='{{ asset('storage/' . $diretor->imagem ) }}' alt='Foto do {{$diretor->nome}}' class='foto'> 
+@endif
+<hr>
 <b>Nome: </b><p> {{ $diretor->nome }}</p><hr>
 <b>Biografia: </b><p> {{ $diretor->biografia }}</p><hr>
 <b>Idade: </b><p> {{ $diretor->idade}} anos</p><hr>

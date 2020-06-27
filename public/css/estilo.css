@@ -23,3 +23,10 @@ body{
 .texto-laranja{
     color: #f95a52;
 }
+
+.foto{
+    max-width: 125px;
+    min-width: 125px;
+    max-height: 175px;
+    min-height: 175px;
+  }

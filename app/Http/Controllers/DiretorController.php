@@ -19,9 +19,17 @@ class DiretorController extends Controller
     }
 
     public function store(Request $request){
-        $dados = $request->all();
-        Diretor::create($dados);
+        
+        Diretor::create([
+            'nome' => $request->nome,
+            'idade' =>$request->idade,
+            'data_nascimento' => $request->data_nascimento,
+            'biografia' => $request->biografia,
+            'imagem' => $request->file('imagem')->store('public/diretores'),
+            'pais_id' => $request->pais_id
+        ]);
         return redirect()->action('DiretorController@index');
+        
     }
     
     public function show(Request $request){

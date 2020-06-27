@@ -5,7 +5,7 @@
 <h1>Cadastro diretor</h1>
 <hr>
 
-<form action="{{ route('diretores.store') }}" method="POST">
+<form action="{{ route('diretores.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
@@ -13,6 +13,7 @@
         <input type="text" class="form-control" name="nome" placeholder="Informe o nome completo">
     </div>
     <div class="form-group">
+        <label for="nome" class="font-weight-bold">Biografia</label>
         <textarea name="biografia" id="" cols="30" rows="5" class="form-control" placeholder="Informe a biografia"></textarea>
     </div>
 
@@ -33,6 +34,10 @@
                 @endforeach
             </select>
         </div> 
+        <div class="form-group col-3">
+            <label for="imagem" class="font-weight-bold">Upload foto</label>
+            <input type="file" name="imagem" class="form-control bg-primary">
+        </div>
     </div>
 
     <div class="form-group">
