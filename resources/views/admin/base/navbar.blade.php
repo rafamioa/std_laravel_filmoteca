@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom-2">
+<nav class="navbar navbar-dark bg-dark border-bottom-2">
 <a class="navbar-brand" href="{{ route('admin.index')}}">
-        FILMOTECA
+        FILMO<b>TECA</b>
     </a>
 </nav>

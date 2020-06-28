@@ -9,7 +9,10 @@
         <h1>Detalhes diretor: <b>{{ $diretor->nome }}</b></h1>
     </div>
     <div class="col-1">
-        <a href="{{ route('diretores.index') }}" class="btn btn-danger ml-auto">Voltar</a>
+        <a href="{{ route('diretores.index') }}" class="btn btn-danger ml-auto">
+            <i class="fa fa-arrow-left"> </i>
+            Voltar
+        </a>
     </div>
 </div>
 <hr>

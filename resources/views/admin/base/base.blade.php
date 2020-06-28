@@ -17,12 +17,12 @@
     <div class="col-2">
         @include('admin.base.sidebar')
     </div>
-    <div class="col-10 cor">
+    <div class="col-10">
         <div class="container">
-            <h1 class="my-3">@yield('cabecalho')</h1>
-            <hr>
-            @yield('conteudo')
-        </div>  
+            <div class="mt-3">
+                @yield('conteudo')
+            </div>
+         </div>
     </div>
 </div>
     

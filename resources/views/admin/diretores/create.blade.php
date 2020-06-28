@@ -2,7 +2,17 @@
 
 @section('conteudo')
 
-<h1>Cadastro diretor</h1>
+<div class="row">
+    <div class="col-11">
+        <h1>Cadastro diretor</h1>
+    </div>
+    <div class="col-1">
+        <a href="{{ route('diretores.index') }}" class="btn btn-danger ml-auto">
+            <i class="fa fa-arrow-left"> </i>
+            Voltar
+        </a>
+    </div>
+</div>
 <hr>
 
 <form action="{{ route('diretores.store') }}" method="POST" enctype="multipart/form-data">
