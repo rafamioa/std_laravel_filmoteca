@@ -30,3 +30,8 @@ body{
     max-height: 175px;
     min-height: 175px;
   }
+
+input:hover, select:hover, textarea:hover{
+    border: 1px solid red;
+    border-bottom: 3px solid red;
+}

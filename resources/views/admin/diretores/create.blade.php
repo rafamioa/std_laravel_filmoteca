@@ -24,7 +24,7 @@
         </div>
         <div class="form-group col-3">
             <label for="data_nascimento" class="font-weight-bold">Data de Nascimento</label>
-            <input type="date" name="data_nascimento" id="data_nascimento" class="form-control">
+            <input type="date" name="data_nascimento" id="data_nascimento" class="form-control" pattern="dd/MM/yyyy">
         </div>
         <div class="form-group col-3">
             <label for="pais" class="font-weight-bold">País de Origem</label>
@@ -36,12 +36,15 @@
         </div> 
         <div class="form-group col-3">
             <label for="imagem" class="font-weight-bold">Upload foto</label>
-            <input type="file" name="imagem" class="form-control bg-primary">
+            <input type="file" name="imagem" class="form-control bg-danger text-white" placeholder="Escolha uma imagem">
         </div>
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-danger">
+            <i class="fa fa-save"></i>
+            Cadastrar
+        </button>
     </div>
 </form>
 
