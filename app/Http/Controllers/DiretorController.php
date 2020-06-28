@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pais;
 use App\Diretor;
 use Illuminate\Http\Request;
+use App\Http\Requests\DiretorRequest;
 
 class DiretorController extends Controller
 {
@@ -18,7 +19,7 @@ class DiretorController extends Controller
         return view('admin.diretores.create',['paises'=>$paises]);
     }
 
-    public function store(Request $request){
+    public function store(DiretorRequest $request){
         
         Diretor::create([
             'nome' => $request->nome,
@@ -43,13 +44,16 @@ class DiretorController extends Controller
         return view('admin.diretores.edit',['diretor'=>$diretor, 'paises'=>$paises]);
     }
 
-    public function update(Request $request){
+    public function update(DiretorRequest $request){
         $diretor = Diretor::find($request->id);
         $diretor->nome = $request->nome;
         $diretor->biografia = $request->biografia;
         $diretor->idade = $request->idade;
         $diretor->data_nascimento = $request->data_nascimento;
         $diretor->pais_id = $request->pais_id;
+        if($request->file('imagem') != NULL){
+            $diretor->imagem = $request->file('imagem')->store('public/diretores');
+        }
         $diretor->save();
         return redirect()->action('DiretorController@index');
     }

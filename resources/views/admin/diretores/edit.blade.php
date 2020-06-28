@@ -15,7 +15,17 @@
   </div>
 <hr>
 
-<form action="{{ route('diretores.update') }}" method="POST">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form action="{{ route('diretores.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <input type="hidden" name="id" value="{{$diretor->id}}">
@@ -48,10 +58,17 @@
                 @endforeach
             </select>
         </div> 
+        <div class="col-3">
+            <label for="imagem" class="font-weight-bold">Upload imagem</label>
+        <input type="file" name="imagem" class="form-control bg-danger text-white">
+        </div>
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-danger">Atualizar</button>
+        <button type="submit" class="btn btn-danger">
+            <i class="fa fa-undo"></i>
+            Atualizar
+        </button>
     </div>
 </form>
 
