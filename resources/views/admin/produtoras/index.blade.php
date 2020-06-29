@@ -6,6 +6,11 @@
 
 @section('cabecalho', 'Lista produtoras')
 
+@if(count($produtoras) <= 0)
+
+<h1>Não há registros</h1>
+
+@else
 <a href="{{ route('produtoras.create') }}" class="btn btn-info mb-2">Novo</a>
 
 <table class="table table-bordered table-hover">
@@ -68,5 +73,7 @@
 <div class="d-flex justify-content-center">
     {!! $produtoras->links() !!}
 </div>
+
+@endif
 
 @endsection

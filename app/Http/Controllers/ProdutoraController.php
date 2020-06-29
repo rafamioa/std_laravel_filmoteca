@@ -17,7 +17,7 @@ class ProdutoraController extends Controller
     public function index()
     {
         $produtoras = Produtora::paginate(5);
-        return view('admin.produtoras.list', ['produtoras' => $produtoras]);
+        return view('admin.produtoras.index', ['produtoras' => $produtoras]);
     }
 
     /**
