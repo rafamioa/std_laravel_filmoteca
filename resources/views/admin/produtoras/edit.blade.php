@@ -12,7 +12,7 @@
 </div>
 <hr>
 
-<form action="{{ route('produtoras.update') }}" method="POST">
+<form action="{{ route('produtoras.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method("PUT")
 <input type="hidden" name="id" value={{$produtora->id}} class="form-control">
@@ -31,16 +31,23 @@
             {{$errors->first('historia')}}
          </div>
     </div>
-    <div class="form-group w-25">
-        <label for="data_fundacao" class="font-weight-bold">Data de Fundação</label>
-        <input type="date" name="data_fundacao" id="data_fundacao" class="form-control {{($errors->has('data_fundacao') ? 'is-invalid' : '' )}}" value={{$produtora->data_fundacao}}>
-        <div class="invalid-feedback">
-            {{$errors->first('data_fundacao')}}
-         </div>
+    <div class="row">
+        <div class="form-group col-3">
+            <label for="data_fundacao" class="font-weight-bold">Data de Fundação</label>
+            <input type="date" name="data_fundacao" id="data_fundacao" class="form-control {{($errors->has('data_fundacao') ? 'is-invalid' : '' )}}" value={{$produtora->data_fundacao}}>
+            <div class="invalid-feedback">
+                {{$errors->first('data_fundacao')}}
+            </div>
+        </div>
+        <div class="col-3">
+            <label for="imagem" class="font-weight-bold">Upload da Imagem</label>
+            <input type="file" name="imagem" class="form-control text-white bg-danger">
+        </div>
     </div>
     <div class="form-group">
         <button class="btn btn-primary">Atualizar</button>
     </div>
+
 </form>
 
 @endsection

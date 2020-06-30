@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin.base.base');
+    return view('admin.index');
 })->name('admin.index');
 
 Route::get('/produtoras', 'ProdutoraController@index')->name('produtoras.index');
