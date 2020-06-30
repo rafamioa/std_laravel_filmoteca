@@ -30,14 +30,8 @@
             <td>{{$p->nome}}</td>
             <td>{{$p->historiaPR}}</td>
             <td>{{date('d/m/Y', strtotime($p->data_fundacao))}}</td>
-            <td class="text-center">
-            <a href="{{ route('produtoras.show', ['id' => $p->id]) }}" class="btn btn-info">Exibir</a>
-                <a href="{{ route('produtoras.edit', ['id' => $p->id]) }}" class="btn btn-warning mx-1">Editar</a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                    Excluir
-                </button>
-                
-            </td>
+            @componenteAcoes(['rota_show' => 'produtoras.show', 'rota_edit' => 'produtoras.edit','id'=> $p->id])
+            @endcomponenteAcoes
         </tr>
         @endforeach
     </tbody> 

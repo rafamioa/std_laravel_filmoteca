@@ -16,9 +16,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
         Blade::component('componentes.mensagem-validacao-form', 'componenteMensagemValidacao');
         Blade::component('componentes.modal-deletar', 'componenteModalDeletar');
         Blade::component('componentes.paginacao', 'componentePaginacao');
+        Blade::component('componentes.acoes', 'componenteAcoes');
     }
 
     /**

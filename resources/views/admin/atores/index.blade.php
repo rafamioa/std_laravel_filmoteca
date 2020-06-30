@@ -2,6 +2,13 @@
 
 @section('conteudo')
 
+
+@if(count($atores) <= 0)
+
+<h1>Não há registros</h1>
+
+@else
+
 <h1>Artistas</h1>
 
 <table class="table table-bordered table-hover">
@@ -23,13 +30,8 @@
             <td>{{$a->idade}}</td>
             <td>{{date('d/m/Y', strtotime($a->data_nascimento))}}</td>
             <td>{{$a->pais->nome}}</td>
-            <td class="text-center">
-            <a href="{{ route('atores.show',['id'=>$a->id]) }}" class="btn btn-info">Exibir</a>
-                <a href="{{ route('atores.edit',['id'=>$a->id]) }}" class="btn btn-warning mx-1">Editar</a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                    Excluir
-                </button>
-            </td>
+            @componenteAcoes(['rota_show' => 'atores.show', 'rota_edit' => 'atores.edit','id'=> $a->id])
+            @endcomponenteAcoes
         </tr>
         @endforeach
     </tbody>
@@ -40,5 +42,7 @@
 
 @componentePaginacao(['colecao' => $atores])
 @endcomponentePaginacao
+
+@endif
 
 @endsection
