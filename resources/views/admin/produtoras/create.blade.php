@@ -6,12 +6,8 @@
 
 @section('cabecalho', 'Cadastro produtora')
 
-
-@isset($mensagem)
-<div class="col-12">
-<p class="alert alert-success">{{$mensagem}}</p>
-</div>
-@endisset
+@componenteMensagemValidacao
+@endcomponenteMensagemValidacao
 
 <form action="{{ route('produtoras.store') }}" method="POST" enctype="multipart/form-data">
     @csrf

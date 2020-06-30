@@ -5,7 +5,10 @@
 <h1>Cadastro artista</h1>
 <hr>
 
-<form action="{{ route('atores.store') }}" method="POST">
+@componenteMensagemValidacao
+@endcomponenteMensagemValidacao
+
+<form action="{{ route('atores.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
@@ -33,6 +36,12 @@
                 @endforeach
             </select>
         </div> 
+        <div class="form-group col-3">
+            <label for="imagem" class="font-weight-bold">
+                Upload de imagem
+            </label>
+            <input type="file" name="imagem" class="form-control text-white bg-danger">
+        </div>
     </div>
 
     <div class="form-group">

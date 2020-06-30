@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ator;
 use App\Pais;
 use Illuminate\Http\Request;
+use App\Http\Requests\AtorRequest;
 use Illuminate\Support\Facades\DB;
 
 class AtorController extends Controller
@@ -15,14 +16,12 @@ class AtorController extends Controller
     }
 
     public function create(){
-        $paises = Pais::all();
+        $paises = Pais::orderBy('nome', 'ASC')->get();
         return view('admin.atores.create', ['paises' => $paises]);
     }
 
-    public function store(Request $request){
-        $dados = $request->all();
-        Ator::create($dados);
-        return redirect()->action('AtorController@index');
+    public function store(AtorRequest $request){
+        
     }
 
     public function show(Request $request){

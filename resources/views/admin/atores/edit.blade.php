@@ -5,6 +5,9 @@
 <h1>Editar o artista: <b>{{$ator->nome}}</b></h1>
 <hr>
 
+@componenteMensagemValidacao
+@endcomponenteMensagemValidacao
+
 <form action="{{ route('atores.update') }}" method="POST">
     @csrf
     @method('PUT')

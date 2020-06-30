@@ -15,15 +15,8 @@
   </div>
 <hr>
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+@componenteMensagemValidacao
+@endcomponenteMensagemValidacao
 
 <form action="{{ route('diretores.update') }}" method="POST" enctype="multipart/form-data">
     @csrf

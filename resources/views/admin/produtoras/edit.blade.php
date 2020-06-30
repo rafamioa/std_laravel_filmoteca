@@ -12,6 +12,9 @@
 </div>
 <hr>
 
+@componenteMensagemValidacao
+@endcomponenteMensagemValidacao
+
 <form action="{{ route('produtoras.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method("PUT")
