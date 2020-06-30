@@ -46,9 +46,8 @@
 @componenteModalDeletar(['action' => 'produtoras.delete', 'id' => $p->id])
 @endcomponenteModalDeletar
 
-<div class="d-flex justify-content-center">
-    {!! $produtoras->links() !!}
-</div>
+@componentePaginacao(['colecao' => $produtoras])
+@endcomponentePaginacao
 
 @endif
 

@@ -38,8 +38,7 @@
 @componenteModalDeletar(['action' => 'atores.delete', 'id' => $a->id])
 @endcomponenteModalDeletar
 
-<div class="d-flex justify-content-center">
-    {!! $atores->links() !!}
-</div>
+@componentePaginacao(['colecao' => $atores])
+@endcomponentePaginacao
 
 @endsection

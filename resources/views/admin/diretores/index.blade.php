@@ -59,9 +59,8 @@
 @componenteModalDeletar(['action' => 'diretores.delete', 'id' => $diretor->id])
 @endcomponenteModalDeletar
 
-<div class="d-flex justify-content-center">
-    {!! $diretores->links() !!}
-</div>
+@componentePaginacao(['colecao' => $diretores])
+@endcomponentePaginacao
 
 @endif
 
