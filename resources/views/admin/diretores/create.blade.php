@@ -2,18 +2,8 @@
 
 @section('conteudo')
 
-<div class="row">
-    <div class="col-11">
-        <h1>Cadastro diretor</h1>
-    </div>
-    <div class="col-1">
-        <a href="{{ route('diretores.index') }}" class="btn btn-danger ml-auto">
-            <i class="fa fa-arrow-left"> </i>
-            Voltar
-        </a>
-    </div>
-</div>
-<hr>
+@componenteCabecalho(['titulo' => 'Cadastrar diretor', 'rota'=> 'diretores.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
@@ -47,18 +37,10 @@
                 @endforeach
             </select>
         </div> 
-        <div class="form-group col-3">
-            <label for="imagem" class="font-weight-bold">Upload foto</label>
-            <input type="file" name="imagem" class="form-control bg-danger text-white " value={{old('imagem')}}>
-        </div>
+        @componenteUpload @endcomponenteUpload
     </div>
+    @componenteBotaoCadastrar @endcomponenteBotaoCadastrar
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-danger">
-            <i class="fa fa-save"></i>
-            Cadastrar
-        </button>
-    </div>
 </form>
 
 @endsection

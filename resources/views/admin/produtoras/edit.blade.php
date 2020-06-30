@@ -2,15 +2,8 @@
 
 @section('conteudo')
 
-<div class="row">
-    <div class="col-11">
-        <h1>Editar produtora: <b>{{$produtora->nome}}</b></h1>
-    </div>
-    <div class="col-1">
-        <a href="{{ route('produtoras.index') }}" class="btn btn-info  ml-auto">Lista</a>
-    </div>
-</div>
-<hr>
+@componenteCabecalho(['titulo' => 'Editar produtora', 'rota'=> 'produtoras.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
@@ -42,14 +35,9 @@
                 {{$errors->first('data_fundacao')}}
             </div>
         </div>
-        <div class="col-3">
-            <label for="imagem" class="font-weight-bold">Upload da Imagem</label>
-            <input type="file" name="imagem" class="form-control text-white bg-danger">
-        </div>
+        @componenteUpload @endcomponenteUpload
     </div>
-    <div class="form-group">
-        <button class="btn btn-primary">Atualizar</button>
-    </div>
+    @componenteBotaoAtualizar @endcomponenteBotaoAtualizar
 
 </form>
 

@@ -4,25 +4,15 @@
 
 @section('conteudo')
 
-<div class="row">
-    <div class="col-11">
-        <h1>Detalhes produtora: <b>{{ $produtora->nome }}</b></h1>
-    </div>
-    <div class="col-1">
-        <a href="{{ route('produtoras.index') }}" class="btn btn-danger ml-auto">
-            <i class="fa fa-arrow-left"> </i>
-            Voltar
-        </a>
-    </div>
-</div>
-<hr>
+@componenteCabecalho(['titulo' => 'Detalhes produtora', 'rota'=> 'produtoras.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 <div class="row">
     <div class="col-4 text-center my-auto">
         @if($produtora->imagem === null)
         <p> Não há foto </p>
     @else
-       <img src='{{ asset('storage/' . $produtora->imagem ) }}' alt='Foto do {{$produtora->nome}}' class='foto'> 
+       <img src='{{ asset('storage/' . $produtora->imagem ) }}' alt='Foto do {{$produtora->nome}}' class='produtora-logo'> 
     @endif
     </div>
     <div class="col-8">

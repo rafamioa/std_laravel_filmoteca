@@ -31,6 +31,13 @@ body{
     min-height: 175px;
   }
 
+  .produtora-logo{
+    max-width: 225px;
+    min-width: 225px;
+    max-height: 175px;
+    min-height: 175px;
+  }
+
 input:hover, select:hover, textarea:hover{
     border: 1px solid red;
     border-bottom: 3px solid red;

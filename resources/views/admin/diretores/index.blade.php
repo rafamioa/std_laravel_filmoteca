@@ -2,18 +2,8 @@
 
 @section('conteudo')
 
-<div class="row">
-  <div class="col-11">
-      <h1>Diretores</h1>
-  </div>
-  <div class="col-1">
-      <a href="{{ route('diretores.create') }}" class="btn btn-danger">
-        <i class="fa fa-plus"> </i>
-        Novo
-      </a>
-  </div>
-</div>
-<hr>
+@componenteCabecalho(['titulo' => 'Diretores', 'rota'=> 'diretores.create', 'link' => 'Novo'])
+@endcomponenteCabecalho
 
 @if(count($diretores) < 1)
 <h2> Não há registros</h2>

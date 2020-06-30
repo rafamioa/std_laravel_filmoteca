@@ -1,17 +1,15 @@
 @extends('admin.base.base')
 
-@section('titulo', 'Lista produtoras')
-
 @section('conteudo')
 
-@section('cabecalho', 'Lista produtoras')
+@componenteCabecalho(['titulo' => 'Produtoras', 'rota'=> 'produtoras.create', 'link' => 'Novo'])
+@endcomponenteCabecalho
 
 @if(count($produtoras) <= 0)
 
 <h1>Não há registros</h1>
 
 @else
-<a href="{{ route('produtoras.create') }}" class="btn btn-info mb-2">Novo</a>
 
 <table class="table table-bordered table-hover">
     <thead class="bg-dark texto-laranja text-center">

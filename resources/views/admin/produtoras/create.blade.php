@@ -1,10 +1,9 @@
 @extends('admin.base.base')
 
-@section('titulo', 'Cadastro produtora')
-
 @section('conteudo')
 
-@section('cabecalho', 'Cadastro produtora')
+@componenteCabecalho(['titulo' => 'Cadastrar produtora', 'rota'=> 'produtoras.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
@@ -33,14 +32,9 @@
                 {{$errors->first('data_fundacao')}}
             </div>
         </div>
-        <div class="form-group col-3">
-            <label for="imagem" class="font-weight-bold">Upload da imagem</label>
-            <input type="file" name="imagem" class="form-control bg-danger text-white"> 
-        </div>
+        @componenteUpload @endcomponenteUpload
     </div>
-    <div class="form-group">
-        <button class="btn btn-danger">Cadastrar</button>
-    </div>
+    @componenteBotaoCadastrar @endcomponenteBotaoCadastrar
 </form>
 
 @endsection

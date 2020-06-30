@@ -4,26 +4,31 @@
 
 @section('conteudo')
 
+@componenteCabecalho(['titulo' => 'Detalhes ator', 'rota'=> 'atores.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
+
 <div class="row">
-    <div class="col-11">
-        <h1>Detalhes ator: <b>{{ $ator->nome }}</b></h1>
+    <div class="col-4 text-center my-auto">
+        @if($ator->imagem === null)
+        <p> Não há foto </p>
+    @else
+       <img src='{{ asset('storage/' . $ator->imagem ) }}' alt='Foto do {{$ator->nome}}' class='foto'> 
+    @endif
     </div>
-    <div class="col-1">
-        <a href="{{ route('atores.index') }}" class="btn btn-info ml-auto">Voltar</a>
+    <div class="col-8">
+        <b>Nome: </b> {{ $ator->nome }}<hr>
+        <b>Idade: </b> {{ $ator->idade}} anos <hr>
+        <b>Data de Nascimento: </b> {{ date('d/m/Y', strtotime($ator->data_nascimento)) }} <hr>
+        <b>País de origem: </b> {{ $ator->pais->nome }}
     </div>
 </div>
 <hr>
-
-<b>Nome: </b><p> {{ $ator->nome }}</p><hr>
-<b>Biografia: </b><p> {{ $ator->biografia }}</p><hr>
-<b>Idade: </b><p> {{ $ator->idade}} anos</p><hr>
-<b>Data de Nascimento: </b><p> {{ date('d/m/Y', strtotime($ator->data_nascimento)) }}</p><hr>
-<b>País de origem: </b><p> {{ $ator->pais->nome }}</p><hr>
-
-
-
-
-
+<div>
+    <h1>Biografia</h1> 
+    <p>
+        {{$ator->biografia}}
+    </p>
+</div>
 
 
 @endsection

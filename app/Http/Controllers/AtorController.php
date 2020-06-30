@@ -21,7 +21,8 @@ class AtorController extends Controller
     }
 
     public function store(AtorRequest $request){
-        
+        $ator = Ator::find($request);
+        return json_encode($ator);
     }
 
     public function show(Request $request){

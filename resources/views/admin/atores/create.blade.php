@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-<h1>Cadastro artista</h1>
-<hr>
+@componenteCabecalho(['titulo' => 'Cadastrar artista', 'rota'=> 'atores.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
@@ -36,17 +36,9 @@
                 @endforeach
             </select>
         </div> 
-        <div class="form-group col-3">
-            <label for="imagem" class="font-weight-bold">
-                Upload de imagem
-            </label>
-            <input type="file" name="imagem" class="form-control text-white bg-danger">
-        </div>
+        @componenteUpload @endcomponenteUpload
     </div>
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </div>
+    @componenteBotaoCadastrar @endcomponenteBotaoCadastrar
 </form>
 
 @endsection

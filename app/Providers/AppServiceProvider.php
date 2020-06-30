@@ -21,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('componentes.modal-deletar', 'componenteModalDeletar');
         Blade::component('componentes.paginacao', 'componentePaginacao');
         Blade::component('componentes.acoes', 'componenteAcoes');
+        Blade::component('componentes.cabecalho', 'componenteCabecalho');
+        Blade::component('componentes.botao-cadastrar', 'componenteBotaoCadastrar');
+        Blade::component('componentes.botao-atualizar', 'componenteBotaoAtualizar');
+        Blade::component('componentes.upload', 'componenteUpload');
     }
 
     /**

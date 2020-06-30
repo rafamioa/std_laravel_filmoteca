@@ -2,18 +2,8 @@
 
 @section('conteudo')
 
-<div class="row">
-    <div class="col-11">
-        <h1>Editar o diretor: <b>{{$diretor->nome}}</b></h1>
-    </div>
-    <div class="col-1">
-        <a href="{{ route('diretores.index') }}" class="btn btn-danger ml-auto">
-          <i class="fa fa-arrow-left"> </i>
-          Voltar
-        </a>
-    </div>
-  </div>
-<hr>
+@componenteCabecalho(['titulo' => 'Editar diretor', 'rota'=> 'diretores.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
@@ -51,18 +41,10 @@
                 @endforeach
             </select>
         </div> 
-        <div class="col-3">
-            <label for="imagem" class="font-weight-bold">Upload imagem</label>
-        <input type="file" name="imagem" class="form-control bg-danger text-white">
-        </div>
+        @componenteUpload @endcomponenteUpload
     </div>
+    @componenteBotaoAtualizar @endcomponenteBotaoAtualizar
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-danger">
-            <i class="fa fa-undo"></i>
-            Atualizar
-        </button>
-    </div>
 </form>
 
 @endsection

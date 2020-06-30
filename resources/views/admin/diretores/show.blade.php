@@ -4,18 +4,8 @@
 
 @section('conteudo')
 
-<div class="row">
-    <div class="col-11">
-        <h1>Detalhes diretor: <b>{{ $diretor->nome }}</b></h1>
-    </div>
-    <div class="col-1">
-        <a href="{{ route('diretores.index') }}" class="btn btn-danger ml-auto">
-            <i class="fa fa-arrow-left"> </i>
-            Voltar
-        </a>
-    </div>
-</div>
-<hr>
+@componenteCabecalho(['titulo' => 'Detalhes diretor', 'rota'=> 'diretores.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 <div class="row">
     <div class="col-4 text-center my-auto">

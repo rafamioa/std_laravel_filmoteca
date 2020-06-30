@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-<h1>Editar o artista: <b>{{$ator->nome}}</b></h1>
-<hr>
+@componenteCabecalho(['titulo' => 'Editar artista', 'rota'=> 'atores.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
@@ -41,11 +41,10 @@
                 @endforeach
             </select>
         </div> 
+        @componenteUpload @endcomponenteUpload
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Atualizar</button>
-    </div>
+    @componenteBotaoAtualizar @endcomponenteBotaoAtualizar
 </form>
 
 @endsection

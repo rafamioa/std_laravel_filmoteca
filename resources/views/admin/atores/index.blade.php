@@ -2,14 +2,14 @@
 
 @section('conteudo')
 
+@componenteCabecalho(['titulo' => 'Atores', 'rota'=> 'atores.create', 'link' => 'Novo'])
+@endcomponenteCabecalho
 
 @if(count($atores) <= 0)
 
 <h1>Não há registros</h1>
 
 @else
-
-<h1>Artistas</h1>
 
 <table class="table table-bordered table-hover">
     <thead class="bg-dark texto-laranja text-center">
