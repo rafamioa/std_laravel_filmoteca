@@ -26,6 +26,13 @@ class FilmeController extends Controller
 
     public function store(Request $request){
        $generos = $request->get('genero_id');
-       var_dump($generos);
+       $filme = Filme::create($request->all());
+       foreach($generos as $id){
+           $genero = Genero::find($id);
+           $filme->generos()->save($genero);
+       }
+
+       return redirect()->action('FilmeController@index');
+       
     }
 }

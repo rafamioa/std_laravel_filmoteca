@@ -1,3 +1,4 @@
+use App\Filme;
 @extends('admin.base.base')
 
 @section('conteudo')
