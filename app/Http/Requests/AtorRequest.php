@@ -30,7 +30,7 @@ class AtorRequest extends FormRequest
             'idade' => 'required|integer|numeric|gt:1|lt:120',
             'pais_id' => 'required',
             'data_nascimento' => 'required',
-            'imagem' => 'mimes:jpeg,png'
+            'imagem' => 'mimes:jpeg,png, jpg'
         ];
     }
 }

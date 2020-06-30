@@ -8,7 +8,7 @@
 @componenteMensagemValidacao
 @endcomponenteMensagemValidacao
 
-<form action="{{ route('atores.update') }}" method="POST">
+<form action="{{ route('atores.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <input type="hidden" name="id" value="{{$ator->id}}">

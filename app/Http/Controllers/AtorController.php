@@ -45,19 +45,24 @@ class AtorController extends Controller
         return view('admin.atores.edit',['ator'=>$ator,'paises'=>$paises]);
     }
 
-    public function update(Request $request){
+    public function update(AtorRequest $request){
         $ator = Ator::find($request->id);
         $ator->nome = $request->nome;
         $ator->biografia = $request->biografia;
         $ator->idade = $request->idade;
         $ator->data_nascimento = $request->data_nascimento;
         $ator->pais_id = $request->pais_id;
+        if($request->file('imagem') != null){
+            ($ator->imagem != null) ? Storage::delete($ator->imagem): null;
+            $ator->imagem = $request->file('imagem')->store('public/atores');
+        }
         $ator->save();
         return redirect()->action('AtorController@index');
     }
 
     public function delete(Request $request){
         $ator = Ator::find($request->id);
+        Storage::delete($ator->imagem);
         $ator->delete();
         return redirect()->action('AtorController@index');
     }
