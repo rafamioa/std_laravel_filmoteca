@@ -42,7 +42,7 @@ class ProdutoraController extends Controller
             'nome' => $request->nome,
             'data_fundacao' => $request->data_fundacao,
             'historia' => $request->historia,
-            'imagem' => $request->file('imagem')->store('public/diretores'),
+            'imagem' => $request->file('imagem')->store('public/produtoras'),
         ]);
         return redirect()->action('ProdutoraController@index');
     }

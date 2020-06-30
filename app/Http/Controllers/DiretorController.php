@@ -6,6 +6,7 @@ use App\Pais;
 use App\Diretor;
 use Illuminate\Http\Request;
 use App\Http\Requests\DiretorRequest;
+use Illuminate\Support\Facades\Storage;
 
 class DiretorController extends Controller
 {
@@ -52,6 +53,7 @@ class DiretorController extends Controller
         $diretor->data_nascimento = $request->data_nascimento;
         $diretor->pais_id = $request->pais_id;
         if($request->file('imagem') != NULL){
+            Storage::delete($diretor->imagem);
             $diretor->imagem = $request->file('imagem')->store('public/diretores');
         }
         $diretor->save();
@@ -60,6 +62,7 @@ class DiretorController extends Controller
 
     public function delete(Request $request){
         $diretor = Diretor::find($request->id);
+        Storage::delete($diretor->imagem);
         $diretor->delete();
         return redirect()->action('DiretorController@index');
     }

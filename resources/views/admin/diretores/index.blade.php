@@ -15,6 +15,9 @@
 </div>
 <hr>
 
+@if(count($diretores) < 1)
+<h2> Não há registros</h2>
+@else
 <table class="table table-bordered table-hover">
     <thead class="bg-dark texto-laranja text-center">
         <tr>
@@ -83,5 +86,7 @@
 <div class="d-flex justify-content-center">
     {!! $diretores->links() !!}
 </div>
+
+@endif
 
 @endsection

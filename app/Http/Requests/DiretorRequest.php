@@ -32,19 +32,4 @@ class DiretorRequest extends FormRequest
             'imagem' => 'mimes:jpeg,png'
         ];
     }
-
-    public function messages(){
-        return [
-            'required' => 'O campo :attribute é obrigatório',
-            'nome.min' => 'O campo :attribute deve conter mais de 3 caracteres',
-            'nome.max' => 'O campo :attribute deve conter menos de 50 caracteres',
-            'biografia.min' => 'O campo :attribute deve conter mais de 25 caracteres',
-            'biografia.max' => 'O campo :attribute deve conter menos de 4000 caracteres',
-            'integer' => 'O campo :attribute deve ser um número inteiro',
-            'gt' => 'O campo :attribute deve ser maior do que 1',
-            'lt' => 'O campo :attribute deve ser menor do que 120',
-            'numeric' => 'O campo :attribute deve ser numérico',
-            'mimes' => 'O arquivo de upload deve ser .jpeg ou .png'
-        ];
-    }
 }
