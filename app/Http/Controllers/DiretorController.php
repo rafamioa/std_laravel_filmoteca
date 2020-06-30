@@ -27,11 +27,12 @@ class DiretorController extends Controller
             'idade' =>$request->idade,
             'data_nascimento' => $request->data_nascimento,
             'biografia' => $request->biografia,
-            'imagem' => $request->file('imagem')->store('public/diretores'),
+            'imagem' => ($request->file('imagem') === NULL) ? null: $request->file('imagem')->store('public/diretores'),
             'pais_id' => $request->pais_id
         ]);
-        return redirect()->action('DiretorController@index');
-        
+
+        $request->session()->flash('status', 'Salvo com sucesso!');
+        return redirect()->action('DiretorController@create');     
     }
     
     public function show(Request $request){

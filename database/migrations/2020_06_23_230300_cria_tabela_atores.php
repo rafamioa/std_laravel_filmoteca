@@ -20,6 +20,7 @@ class CriaTabelaAtores extends Migration
             $table->integer('idade');
             $table->date('data_nascimento');
             $table->unsignedInteger('pais_id');
+            $table->string('imagem')->nullable();
 
             $table->foreign('pais_id')->references('id')->on('paises');          
         });

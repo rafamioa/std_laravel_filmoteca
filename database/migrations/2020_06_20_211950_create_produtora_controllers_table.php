@@ -18,7 +18,7 @@ class CreateProdutoraControllersTable extends Migration
             $table->string('nome');
             $table->text('historia', 250);
             $table->date('data_fundacao');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
         });
     }
 

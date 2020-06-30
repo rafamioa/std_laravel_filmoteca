@@ -15,6 +15,10 @@
 </div>
 <hr>
 
+@empty($_SESSION=['status'])
+<p class="alert alert-success">{{$_SESSION=['status']}}</p>
+@endempty
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
