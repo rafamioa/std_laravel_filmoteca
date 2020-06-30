@@ -7,6 +7,7 @@ use App\Pais;
 use Illuminate\Http\Request;
 use App\Http\Requests\AtorRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AtorController extends Controller
 {
@@ -22,7 +23,15 @@ class AtorController extends Controller
 
     public function store(AtorRequest $request){
         $ator = Ator::find($request);
-        return json_encode($ator);
+        Ator::create([
+            'nome' => $request->nome,
+            'biografia' => $request->biografia,
+            'idade' => $request->idade,
+            'data_nascimento' => $request->data_nascimento,
+            'pais_id' => $request->pais_id,
+            'imagem' => ($request->file('imagem') === null) ? null : $request->file('imagem')->store('public/atores')
+        ]);
+        return redirect()->action('AtorController@create');
     }
 
     public function show(Request $request){

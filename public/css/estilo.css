@@ -26,9 +26,10 @@ body{
 
 .foto{
     max-width: 125px;
-    min-width: 125px;
     max-height: 175px;
-    min-height: 175px;
+    width: auto;
+    height: auto;
+
   }
 
   .produtora-logo{
