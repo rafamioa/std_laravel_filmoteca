@@ -16,6 +16,9 @@ class CreateProdutoraControllersTable extends Migration
         Schema::create('produtoras', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->text('historia', 250);
+            $table->date('data_fundacao');
+            $table->string('imagem');
         });
     }
 

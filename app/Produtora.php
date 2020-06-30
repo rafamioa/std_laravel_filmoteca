@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Produtora extends Model
 {
     protected $table = 'produtoras';
-    protected $fillable = ['nome','historia', 'data_fundacao'];
-    public $timestamps = true;
+    protected $fillable = ['nome','historia', 'data_fundacao',  'imagem'];
+    public $timestamps = false;
 
     /*
     public function getDataFundacaoAttribute(){

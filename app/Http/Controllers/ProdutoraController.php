@@ -38,9 +38,13 @@ class ProdutoraController extends Controller
      */
     public function store(ProdutoraRequest $request)
     {
-        Produtora::create($request->validated());
-        $mensagem = 'Salvo com sucesso';
-        return view('admin.produtoras.create')->with(['mensagem' => $mensagem]);
+        Produtora::create([
+            'nome' => $request->nome,
+            'data_fundacao' => $request->data_fundacao,
+            'historia' => $request->historia,
+            'imagem' => $request->file('imagem')->store('public/diretores'),
+        ]);
+        return redirect()->action('ProdutoraController@index');
     }
 
     /**

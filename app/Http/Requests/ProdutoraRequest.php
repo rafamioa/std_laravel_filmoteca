@@ -26,7 +26,8 @@ class ProdutoraRequest extends FormRequest
         return [
             'nome' => 'required|min:3|max:50',
             'historia' => 'required|min:25|max:500',
-            'data_fundacao' => 'required'
+            'data_fundacao' => 'required',
+            'imagem' => 'mimes:jpeg,png'
         ];
     }
 }
