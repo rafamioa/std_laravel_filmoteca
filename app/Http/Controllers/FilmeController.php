@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class FilmeController extends Controller
 {
     public function index(){
-        $filmes = Filme::all();
+        $filmes = Filme::with('pais','produtora')->paginate(5);
         return view('admin.filmes.index', ['filmes' => $filmes]);
     }
 
@@ -51,5 +51,15 @@ class FilmeController extends Controller
     public function show(Request $request){
         $filme = Filme::with(['classificacao', 'generos', 'produtora', 'pais'])->find($request->id)->first();
         return view('admin.filmes.show', ['filme' => $filme]);
+    }
+
+    public function edit(){
+        $filme = Filme::with(['classificacao', 'generos', 'produtora', 'pais'])->find($request->id)->first();
+        return view('admin.filmes.edit', ['filme' => $flme]);
+    }
+
+    public function delete(Request $request){
+        $filme = Filme::find($request->id)->first();
+        $filme->delete();
     }
 }
