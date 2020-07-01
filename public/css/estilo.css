@@ -32,6 +32,14 @@ body{
 
   }
 
+  .capa{
+    max-width: 200px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+
+  }
+
   .produtora-logo{
     max-width: 225px;
     min-width: 225px;

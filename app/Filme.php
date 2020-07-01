@@ -12,7 +12,7 @@ class Filme extends Model
     // DEFINIÇÕES
     protected $table = "filmes";
     protected $primaryKey = 'id'; 
-    protected $fillable = ['titulo', 'sinopse','data_lancamento', 'duracao', 'pais_id','classificacao_id','produtora_id'];
+    protected $fillable = ['titulo', 'sinopse','data_lancamento', 'duracao', 'imagem','pais_id','classificacao_id','produtora_id'];
     public $timestamps = false;
 
     // RELACIONAMENTOS

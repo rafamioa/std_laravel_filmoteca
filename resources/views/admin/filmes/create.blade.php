@@ -6,14 +6,21 @@ use App\Filme;
 <h1>Cadastro filme</h1>
 <hr>
 
-<form action="{{ route('filmes.store') }}" method="POST">
+<form action="{{ route('filmes.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="row">
-        <div class="col-9">
+        <div class="col-6">
             <div class="form-group">
                 <label for="titulo" class="font-weight-bold">Título do filme</label>
                 <input type="text" class="form-control" name="titulo" placeholder="Título">
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="form-group">
+                <label class="font-weight-bold">Upload de capa</label>
+                <input type="file" name="imagem" class="form-control bg-danger text-white">
             </div>
         </div>
 
@@ -77,9 +84,8 @@ use App\Filme;
         </div>
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </div>
+    @componenteBotaoCadastrar
+    @endcomponenteBotaoCadastrar
 
 
 </form>
