@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 
 class FilmeController extends Controller
 {
+    public function index(){
+
+    }
+
     public function create(){
         $generos = Genero::orderBy('nome', 'ASC')->get();
         $produtoras = Produtora::orderBy('nome', 'ASC')->get();
@@ -34,5 +38,10 @@ class FilmeController extends Controller
 
        return redirect()->action('FilmeController@index');
        
+    }
+
+    public function show(Request $request){
+        $filme = Filme::with(['classificacao', 'generos', 'produtora', 'pais'])->find($request->id);
+        return view('admin.filmes.show', ['filme' => $filme]);
     }
 }

@@ -25,11 +25,11 @@ class Filme extends Model
     }
 
     public function classificacao(){
-        return $this->hasOne(Produtora::class, 'id', 'classificacao_id');
+        return $this->hasOne(Classificacao::class, 'id', 'classificacao_id');
     }
 
     public function generos(){
-        return $this->belongsToMany(Genero::class, 'filmes_generos', 'filme_id', 'genero_id');
-    }
+       return $this->belongsToMany(Genero::class, 'filmes_generos', 'filme_id', 'genero_id'); 
+    }  
 
 }

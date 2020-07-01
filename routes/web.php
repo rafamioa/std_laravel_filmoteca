@@ -39,5 +39,7 @@ Route::get('/diretores/edit/{id}', 'DiretorController@edit')->name('diretores.ed
 Route::put('/diretores/update', 'DiretorController@update')->name('diretores.update');
 Route::delete('/diretores/delete/{id}', 'DiretorController@delete')->name('diretores.delete');
 
+Route::get('/filmes', 'FilmeController@index')->name('filmes.index');
 Route::get('/filmes/create', 'FilmeController@create')->name('filmes.create');
 Route::post('/filmes/store', 'FilmeController@store')->name('filmes.store');
+Route::get('/filmes/show/{id}', 'FilmeController@show')->name('filmes.show');

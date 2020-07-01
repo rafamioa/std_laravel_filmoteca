@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Classificacao extends Model
 {
     protected $table = 'classificacoes';
+
 }
