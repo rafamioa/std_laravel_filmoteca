@@ -1,4 +1,5 @@
 use App\Filme;
+use App\Diretor;
 @extends('admin.base.base')
 
 @section('conteudo')
@@ -48,6 +49,16 @@ use App\Filme;
         <div class="form-check form-check-inline">      
             <input class="form-check-input" type="checkbox"  name="genero_id[]" value="{{$genero->id}}">
             <label class="form-check-label" for="inlineCheckbox1">{{$genero->nome}}</label>    
+        </div>
+        @endforeach
+    </div>
+
+    <div class="form-group">
+        <label for="diretor" class="font-weight-bold">Diretor</label><br>
+        @foreach($diretores as $diretor)
+        <div class="form-check form-check-inline">      
+            <input class="form-check-input" type="checkbox"  name="diretor_id[]" value="{{$diretor->id}}">
+            <label class="form-check-label" for="inlineCheckbox1">{{$diretor->nome}}</label>    
         </div>
         @endforeach
     </div>

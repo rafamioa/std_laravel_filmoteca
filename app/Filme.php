@@ -30,6 +30,10 @@ class Filme extends Model
 
     public function generos(){
        return $this->belongsToMany(Genero::class, 'filmes_generos', 'filme_id', 'genero_id'); 
-    }  
+    } 
+
+    public function diretores(){
+        return $this->belongsToMany(Diretor::class, 'filmes_diretores', 'filme_id', 'diretor_id');
+    } 
 
 }

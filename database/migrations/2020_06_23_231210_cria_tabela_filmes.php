@@ -19,7 +19,7 @@ class CriaTabelaFilmes extends Migration
             $table->text('sinopse');
             $table->string('duracao');
             $table->date('data_lancamento');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
             $table->unsignedInteger('classificacao_id');
             $table->unsignedInteger('pais_id');
             $table->unsignedInteger('produtora_id');

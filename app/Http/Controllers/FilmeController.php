@@ -6,6 +6,7 @@ use App\Pais;
 use App\Filme;
 use App\Genero;
 use App\Produtora;
+use App\Diretor;
 use App\Classificacao;
 use Illuminate\Http\Request;
 
@@ -21,16 +22,18 @@ class FilmeController extends Controller
         $produtoras = Produtora::orderBy('nome', 'ASC')->get();
         $classificacoes = Classificacao::all();
         $paises = Pais::orderBy('nome', 'ASC')->get();
+        $diretores = Diretor::orderBy('nome', 'ASC')->get();
         return view('admin.filmes.create',[
             'paises' => $paises,
             'classificacoes' => $classificacoes,
             'generos' => $generos,
-            'produtoras' => $produtoras
+            'produtoras' => $produtoras,
+            'diretores' => $diretores
         ]);
     }
 
     public function store(Request $request){
-       $generos = $request->get('genero_id');
+       
        $filme = Filme::create([
            'titulo' => $request->titulo,
            'sinopse' => $request->sinopse,
@@ -41,10 +44,18 @@ class FilmeController extends Controller
            'classificacao_id' => $request->classificacao_id,
            'imagem' => ($request->file('imagem') === null) ? null: $request->file('imagem')->store('public/filmes')
        ]);
+
+       $generos = $request->get('genero_id');
        foreach($generos as $id){
            $genero = Genero::find($id);
            $filme->generos()->save($genero);
        }
+       
+       $diretores = $request->get('diretor_id');
+       foreach($diretores as $id){
+        $diretor = Diretor::find($id);
+        $filme->diretores()->save($diretor);
+    }
        return redirect()->action('FilmeController@index');     
     }
 

@@ -17,6 +17,10 @@ class Diretor extends Model
         return $this->hasOne(Pais::class, 'id', 'pais_id');
     }
 
+    public function filmes(){
+        return $this->belongsToMany(Filme::class, 'filmes_diretores', 'diretor_id', 'filmes_id');
+    }
+
     // SET E GET
     public function getBiografiaFMTAttribute(){
         return str_limit($this->biografia, 25);
