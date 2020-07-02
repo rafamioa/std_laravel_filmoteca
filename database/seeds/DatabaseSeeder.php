@@ -1,6 +1,5 @@
 <?php
 
-use AtorTableSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProdutoraTableSeeder::class);
         $this->call(GeneroTableSeeder::class); 
         $this->call(DiretorTableSeeder::class); 
-        $this->call(AtorTableSeeder::class);             
+        $this->call(AtorTableSeeder::class);   
+        $this->call(FilmeTableSeeder::class);           
     }
 }

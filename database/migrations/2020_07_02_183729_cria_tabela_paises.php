@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CriaTabelaPaises extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('paises', function (Blueprint $table) {
@@ -19,11 +14,7 @@ class CriaTabelaPaises extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::drop('paises', function (Blueprint $table) {

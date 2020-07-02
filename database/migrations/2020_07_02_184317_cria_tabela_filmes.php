@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CriaTabelaFilmes extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('filmes', function (Blueprint $table) {
@@ -30,11 +25,6 @@ class CriaTabelaFilmes extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('filmes');
