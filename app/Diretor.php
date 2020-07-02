@@ -9,7 +9,7 @@ class Diretor extends Model
 {
     // DEFINIÇÕES
     protected $table = 'diretores';
-    protected $fillable = ['nome', 'idade', 'biografia','data_nascimento'	,'pais_id', 'imagem'];
+    protected $fillable = ['nome', 'idade', 'biografia','data_nascimento','pais_id', 'imagem'];
     public $timestamps = false;
 
     // RELACIONAMENTOS
@@ -18,7 +18,7 @@ class Diretor extends Model
     }
 
     public function filmes(){
-        return $this->belongsToMany(Filme::class, 'filmes_diretores', 'diretor_id', 'filmes_id');
+        return $this->belongsToMany(Filme::class, 'filmes_diretores', 'diretor_id', 'filme_id');
     }
 
     // SET E GET

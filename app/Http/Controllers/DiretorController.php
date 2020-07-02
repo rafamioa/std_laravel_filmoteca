@@ -36,7 +36,7 @@ class DiretorController extends Controller
     }
     
     public function show(Request $request){
-        $diretor = Diretor::with('pais')->find( $request->id);
+        $diretor = Diretor::with('pais', 'filmes')->find( $request->id);
         return view('admin.diretores.show',['diretor'=>$diretor]);
     }
 

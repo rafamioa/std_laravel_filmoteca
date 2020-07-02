@@ -24,20 +24,25 @@
 </div>
 <hr>
 <div>
-    <h1>Biografia</h1> 
+    <h2>Biografia</h2> 
     <p>
         {{$diretor->biografia}}
     </p>
 </div>
+<hr>
 
-
-
-
-
-
-
-
-
-
+<h2>Diretor em</h2> 
+<div class="row">
+    @foreach($diretor->filmes as $filme)
+    <div class="col-3 my-2">     
+      <div class="card">
+            <img src="{{ asset('storage/' . $filme->imagem) }}" class="capa" alt="...">
+            <div class="card-body">
+                <h6 class="card-title font-weigth-bold">{{$filme->titulo}}</h6>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
 
 @endsection
