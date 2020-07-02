@@ -9,7 +9,7 @@ class Ator extends Model
 {
     // DEFINIÇÕES
     protected $table = "atores";
-    protected $fillable = ['nome', 'biografia','idade', 'data_nascimento', 'pais_id', 'imagem'];
+    protected $fillable = ['nome', 'biografia','idade', 'data_nascimento', 'data_falecimento', 'pais_id', 'imagem', 'sexo_id'];
     protected $visible = ['nome', 'biografia', 'idade', 'data_nascimento','pais_id'];
     public $timestamps = false;
 

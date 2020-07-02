@@ -9,7 +9,7 @@ class Diretor extends Model
 {
     // DEFINIÇÕES
     protected $table = 'diretores';
-    protected $fillable = ['nome', 'idade', 'biografia','data_nascimento','pais_id', 'imagem'];
+    protected $fillable = ['nome', 'idade', 'biografia','data_nascimento', 'data_falecimento','pais_id', 'imagem', 'sexo_id'];
     public $timestamps = false;
 
     // RELACIONAMENTOS
