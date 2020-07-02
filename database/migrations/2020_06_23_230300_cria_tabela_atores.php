@@ -19,6 +19,7 @@ class CriaTabelaAtores extends Migration
             $table->text('biografia', 500);
             $table->integer('idade');
             $table->date('data_nascimento');
+            $table->date('data_falescimento')->nullable();
             $table->unsignedInteger('pais_id');
             $table->string('imagem')->nullable();
 
