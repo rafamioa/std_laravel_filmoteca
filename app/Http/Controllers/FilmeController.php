@@ -116,8 +116,8 @@ class FilmeController extends Controller
     }
 
     public function delete(Request $request){
-        $filme = Filme::find($request->id)->first();
-        return json_encode($filme);
+        $filme = Filme::find($request->id);
+        Storage::delete($filme->imagem);
         $filme->delete();
         return redirect()->action('FilmeController@index');
     }

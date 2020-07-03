@@ -38,7 +38,7 @@
       <div class="card ">
             <img src="{{ asset('storage/' . $filme->imagem) }}" class="capa" alt="...">
             <div class="card-body">
-                <h6 class="card-title font-weigth-bold">{{$filme->titulo}}</h6>
+                <h6> <b>{{$filme->titulo}} </b></h6>
             </div>
         </div>
     </div>
