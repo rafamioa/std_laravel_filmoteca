@@ -19,9 +19,9 @@ class CriaTabelaFilmes extends Migration
             $table->unsignedInteger('pais_id');
             $table->unsignedInteger('produtora_id');
             
-            $table->foreign('classificacao_id')->references('id')->on('classificacoes');
-            $table->foreign('pais_id')->references('id')->on('paises');
-            $table->foreign('produtora_id')->references('id')->on('produtoras');
+            $table->foreign('classificacao_id')->references('id')->on('classificacoes')->onDelete('cascade');
+            $table->foreign('pais_id')->references('id')->on('paises')->onDelete('cascade');
+            $table->foreign('produtora_id')->references('id')->on('produtoras')->onDelete('cascade');
         });
     }
 

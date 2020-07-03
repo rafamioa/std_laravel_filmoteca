@@ -4,8 +4,8 @@ use App\Diretor;
 
 @section('conteudo')
 
-<h1>Cadastro filme</h1>
-<hr>
+@componenteCabecalho(['titulo' => 'Cadastrar filme', 'rota'=> 'filmes.index', 'link' => 'Voltar'])
+@endcomponenteCabecalho
 
 <form action="{{ route('filmes.store') }}" method="POST" enctype="multipart/form-data">
     @csrf

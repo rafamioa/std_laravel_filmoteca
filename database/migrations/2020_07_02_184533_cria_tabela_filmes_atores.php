@@ -13,8 +13,8 @@ class CriaTabelaFilmesAtores extends Migration
             $table->unsignedInteger('filme_id');
             $table->unsignedInteger('ator_id');
 
-            $table->foreign('filme_id')->references('id')->on('filmes');
-            $table->foreign('ator_id')->references('id')->on('atores');          
+            $table->foreign('filme_id')->references('id')->on('filmes')->onDelete('cascade');
+            $table->foreign('ator_id')->references('id')->on('atores')->onDelete('cascade');     
         });
     }
 

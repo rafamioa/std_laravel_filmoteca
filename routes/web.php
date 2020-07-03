@@ -44,4 +44,5 @@ Route::get('/filmes/create', 'FilmeController@create')->name('filmes.create');
 Route::post('/filmes/store', 'FilmeController@store')->name('filmes.store');
 Route::get('/filmes/show/{id}', 'FilmeController@show')->name('filmes.show');
 Route::get('/filmes/edit/{id}', 'FilmeController@edit')->name('filmes.edit');
+Route::put('/filmes/update', 'FilmeController@update')->name('filmes.update');
 Route::delete('/filmes/delete/{id}', 'FilmeController@delete')->name('filmes.delete');

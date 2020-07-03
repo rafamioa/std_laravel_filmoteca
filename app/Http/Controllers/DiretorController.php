@@ -48,6 +48,7 @@ class DiretorController extends Controller
 
     public function update(DiretorRequest $request){
         $diretor = Diretor::find($request->id);
+        
         $diretor->nome = $request->nome;
         $diretor->biografia = $request->biografia;
         $diretor->idade = $request->idade;

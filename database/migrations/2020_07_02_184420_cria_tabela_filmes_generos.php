@@ -13,8 +13,8 @@ class CriaTabelaFilmesGeneros extends Migration
             $table->unsignedInteger('filme_id');
             $table->unsignedInteger('genero_id');
 
-            $table->foreign('filme_id')->references('id')->on('filmes');
-            $table->foreign('genero_id')->references('id')->on('generos');
+            $table->foreign('filme_id')->references('id')->on('filmes')->onDelete('cascade');
+            $table->foreign('genero_id')->references('id')->on('generos')->onDelete('cascade');
         });
     }
 

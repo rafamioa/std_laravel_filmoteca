@@ -1,6 +1,6 @@
 <td class="text-center">
     <a href="{{ route($rota_show, ['id'=>$id]) }}" class="btn btn-info">
-      <i class="fa fa-search-plus"></i>
+      <i class="fa fa-eye"></i>
       Exibir
     </a>
         <a href="{{ route($rota_edit ,['id'=>$id]) }}" class="btn btn-warning mx-1">

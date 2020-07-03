@@ -19,8 +19,8 @@ class CriaTabelaDiretores extends Migration
             $table->unsignedInteger('pais_id');
             $table->unsignedInteger('sexo_id');
 
-            $table->foreign('pais_id')->references('id')->on('paises');   
-            $table->foreign('sexo_id')->references('id')->on('sexos');  
+            $table->foreign('pais_id')->references('id')->on('paises')->onDelete('cascade');  
+            $table->foreign('sexo_id')->references('id')->on('sexos')->onDelete('cascade');  
         });
     }
 

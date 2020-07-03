@@ -13,8 +13,8 @@ class CriaTabelaFilmesDiretores extends Migration
             $table->unsignedInteger('filme_id');
             $table->unsignedInteger('diretor_id');
 
-            $table->foreign('filme_id')->references('id')->on('filmes');
-            $table->foreign('diretor_id')->references('id')->on('diretores');
+            $table->foreign('filme_id')->references('id')->on('filmes')->onDelete('cascade');
+            $table->foreign('diretor_id')->references('id')->on('diretores')->onDelete('cascade');
         });
     }
 

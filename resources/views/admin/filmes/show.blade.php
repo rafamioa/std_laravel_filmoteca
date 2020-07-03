@@ -23,7 +23,7 @@
         <b>Data de Lançamento: </b> {{ date('d/m/Y', strtotime($filme->data_lancamento)) }}<hr>
         <b>Gêneros: </b> 
         @foreach($filme->generos as $genero)
-        {{ $genero->nome }}
+         {{ $genero->nome }} 
         @endforeach
     </div>
 </div>

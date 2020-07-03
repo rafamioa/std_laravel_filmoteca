@@ -12,7 +12,7 @@ class Filme extends Model
     // DEFINIÇÕES
     protected $table = "filmes";
     protected $primaryKey = 'id'; 
-    protected $fillable = ['titulo', 'sinopse','data_lancamento', 'duracao', 'imagem','pais_id','classificacao_id','produtora_id'];
+    protected $fillable = ['titulo', 'sinopse','data_lancamento', 'duracao', 'imagem','pais_id','classificacao_id','produtora_id',];
     public $timestamps = false;
 
     // RELACIONAMENTOS
@@ -35,5 +35,14 @@ class Filme extends Model
     public function diretores(){
         return $this->belongsToMany(Diretor::class, 'filmes_diretores', 'filme_id', 'diretor_id');
     } 
+
+    public function getGenerosDoFilmeAttribute(){
+        return array_pluck(collect($this->generos)->toArray(), 'id');
+    }
+
+    public function getDiretoresDoFilmeAttribute(){
+        return array_pluck(collect($this->diretores)->toArray(), 'id');
+    }
+
 
 }

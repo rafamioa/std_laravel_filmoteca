@@ -19,8 +19,8 @@ class CriaTabelaAtores extends Migration
             $table->unsignedInteger('sexo_id');
             $table->string('imagem')->nullable();
 
-            $table->foreign('pais_id')->references('id')->on('paises');    
-            $table->foreign('sexo_id')->references('id')->on('sexos');       
+            $table->foreign('pais_id')->references('id')->on('paises')->onDelete('cascade');    
+            $table->foreign('sexo_id')->references('id')->on('sexos')->onDelete('cascade');       
         });
     }
 
