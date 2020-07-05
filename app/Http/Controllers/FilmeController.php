@@ -10,6 +10,7 @@ use App\Produtora;
 use App\Classificacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\FilmeRequest;
 use Illuminate\Support\Facades\Storage;
 
 class FilmeController extends Controller
@@ -34,7 +35,7 @@ class FilmeController extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    public function store(FilmeRequest $request){
        
        $filme = Filme::create([
            'titulo' => $request->titulo,
@@ -89,7 +90,7 @@ class FilmeController extends Controller
         
     }
 
-    public function update(Request $request){
+    public function update(FilmeRequest $request){
 
         $filme = Filme::find($request->id);
 

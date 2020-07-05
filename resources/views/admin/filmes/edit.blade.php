@@ -5,6 +5,9 @@
 @componenteCabecalho(['titulo' => 'Editar filme', 'rota'=> 'filmes.index', 'link' => 'Voltar'])
 @endcomponenteCabecalho
 
+@componenteMensagemValidacao
+@endcomponenteMensagemValidacao
+
 <form action="{{ route('filmes.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')

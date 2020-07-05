@@ -25,8 +25,7 @@ body{
 }
 
 .foto{
-    max-width: 125px;
-    max-height: 175px;
+    max-height: 250px;
     width: auto;
     height: auto;
 
@@ -41,13 +40,13 @@ body{
   }
 
   .produtora-logo{
-    max-width: 225px;
-    min-width: 225px;
     max-height: 175px;
-    min-height: 175px;
+    width: auto;
+    height: auto;
   }
 
 input:hover, select:hover, textarea:hover{
     border: 1px solid red;
     border-bottom: 3px solid red;
 }
+
