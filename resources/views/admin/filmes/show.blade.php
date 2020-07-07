@@ -23,7 +23,7 @@
         <b>Data de Lançamento: </b> {{ date('d/m/Y', strtotime($filme->data_lancamento)) }}<hr>
         <b>Gêneros: </b> 
         @foreach($filme->generos as $genero)
-         {{ $genero->nome }} 
+         <a href="#" class="bg-secondary mx-1 text-white p-1 list-unsigned">{{ $genero->nome }} </a>
         @endforeach
     </div>
 </div>

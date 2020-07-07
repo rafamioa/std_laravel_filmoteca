@@ -23,5 +23,6 @@ class GeneroTableSeeder extends Seeder
         DB::table('generos')->insert(['nome' => 'Comédia']);
         DB::table('generos')->insert(['nome' => 'Terror']);
         DB::table('generos')->insert(['nome' => 'Suspense']);
+        DB::table('generos')->insert(['nome' => 'Guerra']);
     }
 }
