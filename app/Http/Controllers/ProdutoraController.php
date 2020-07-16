@@ -21,14 +21,14 @@ class ProdutoraController extends Controller
         return view('admin.produtoras.create');
     }
 
- 
+
     public function store(ProdutoraRequest $request)
     {
         Produtora::create([
             'nome' => $request->nome,
             'data_fundacao' => $request->data_fundacao,
             'historia' => $request->historia,
-            'imagem' => ($request->file('imagem') === null)? null: $request->file('imagem')->store('public/produtoras'),
+            'imagem' => ($request->file('imagem') === null)? null: $request->file('imagem')->store('public' . DIRECTORY_SEPARATOR .'produtoras'),
         ]);
         return redirect()->action('ProdutoraController@index');
     }
@@ -40,7 +40,7 @@ class ProdutoraController extends Controller
         return view('admin.produtoras.show')->with(['produtora' => $produtora]);
     }
 
- 
+
     public function edit(Request $request)
     {
         $produtora = Produtora::find($request->id);
@@ -50,7 +50,7 @@ class ProdutoraController extends Controller
     public function update(ProdutoraRequest $request)
     {
        $p_resultado = Produtora::find($request->id);
-      
+
        $p_resultado->nome = $request->nome;
        $p_resultado->historia = $request->historia;
        $p_resultado->data_fundacao = $request->data_fundacao;
@@ -62,13 +62,13 @@ class ProdutoraController extends Controller
        return redirect()->action('ProdutoraController@index');
     }
 
- 
+
     public function destroy(Request $request)
     {
-       $produtora = Produtora::find($request->id);  
+       $produtora = Produtora::find($request->id);
        Storage::delete($produtora->imagem);
-       $produtora->delete();   
-       return redirect()->action('ProdutoraController@index'); 
-        
+       $produtora->delete();
+       return redirect()->action('ProdutoraController@index');
+
     }
 }
